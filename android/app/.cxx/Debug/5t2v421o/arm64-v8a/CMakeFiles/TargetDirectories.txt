@@ -1,0 +1,2 @@
+C:/flutter/flutter_apps/placela/android/app/.cxx/Debug/5t2v421o/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/flutter/flutter_apps/placela/android/app/.cxx/Debug/5t2v421o/arm64-v8a/CMakeFiles/rebuild_cache.dir

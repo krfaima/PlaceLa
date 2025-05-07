@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "616510457194",
+    "project_id": "appone-ffd62",
+    "storage_bucket": "appone-ffd62.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616510457194:android:8b9c3b1e28b102c7b51113",
+        "android_client_info": {
+          "package_name": "com.example.appone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHNAdfJxl6r_WtZvOomn4Yu3I795cispI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

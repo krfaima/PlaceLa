@@ -1,0 +1,1 @@
+C:\flutter\flutter_apps\appone\build\app\intermediates\cxx\RelWithDebInfo\rx581f6v\obj\arm64-v8a
