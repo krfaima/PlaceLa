@@ -1,16 +1,16 @@
-# appone
+# PlaceLa
 
-A new Flutter project.
+Projet Flutter pour la gestion de parkings et de réservations.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Ce projet est un point de départ pour développer une application Flutter.
 
-A few resources to get you started if this is your first Flutter project:
+Quelques ressources utiles pour débuter avec Flutter :
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Lab: Écrivez votre première application Flutter](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Exemples Flutter utiles](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Pour de l'aide sur Flutter, consultez la
+[documentation officielle](https://docs.flutter.dev/), qui propose tutoriels,
+exemples, guides de développement mobile et une référence complète de l'API.
