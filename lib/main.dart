@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'register_page.dart';
 import 'pages/find_parking_page.dart';
-import 'profile_page.dart';      // à créer si pas encore
 
 void main() {
   runApp(const MyApp());
@@ -50,10 +49,7 @@ class MyApp extends StatelessWidget {
         '/onboarding': (context) => const OnboardingScreen(),
         '/register': (context) => RegisterPage(),
         '/find_parking': (context) => const FindParkingPage(),
-         '/user_profile': (context) {
-          final token = ModalRoute.of(context)!.settings.arguments as String;
-          return ProfilePage(token: token);
-        },
+         
       },
     );
   }
