@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthService {
   final bool isLocal = false; // set to true for localhost
 
-String get baseUrl => "http://192.168.1.8:8000/accounts/";
+String get baseUrl => "http://127.0.0.1:8000/accounts/";
   //   return isLocal
   //       ? "http://192.168.1.8:8000/accounts/"
   //       : "http://10.0.2.2:8000/accounts/";

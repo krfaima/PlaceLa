@@ -46,9 +46,14 @@ INSTALLED_APPS = [
     'accounts',  
        
 ]
+
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication',  # or JWTAuthentication, etc.
+
+        
     ),
 }
 
@@ -92,7 +97,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'appone_db',  # Mets le nom de ta base PostgreSQL
+        'NAME': 'appone',  # Mets le nom de ta base PostgreSQL
         'USER': 'postgres',  # Ton utilisateur PostgreSQL
         'PASSWORD': 'admin',  # Ton mot de passe PostgreSQL
         'HOST': 'localhost',  # PostgreSQL est en local

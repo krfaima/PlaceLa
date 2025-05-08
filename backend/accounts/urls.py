@@ -1,6 +1,7 @@
 # urls.py
 from django.urls import path
 from . import views
+from .views import UserProfileDetailView
 
 urlpatterns = [
     # URLs existantes
@@ -17,4 +18,7 @@ urlpatterns = [
     path('reserve/', views.ReservationView.as_view(), name='reservation'),
     path('process-payment/', views.ProcessPaymentView.as_view(), name='process-payment'),
     path('verifier-matricule/', views.verifier_matricule, name='verifier-matricule'),
+    
+    path('profile/', UserProfileDetailView.as_view(), name='user-profile'),
+
 ]

@@ -77,7 +77,7 @@ class _MapScreenState extends State<MapScreen> {
 
     try {
       String url =
-          'http://192.168.1.8:8000/api/nearby-carparks/?lat=${_currentPosition!.latitude}&lng=${_currentPosition!.longitude}';
+          'http://127.0.0.1:8000/api/nearby-carparks/?lat=${_currentPosition!.latitude}&lng=${_currentPosition!.longitude}';
       var response = await http.get(Uri.parse(url));
 
       if (response.statusCode == 200) {

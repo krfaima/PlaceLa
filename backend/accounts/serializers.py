@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from .models import CustomUser, Carpark, Reservation, Payment
+from django.contrib.auth.models import User
+# from django.contrib.auth.models import AbstractUser
+from .models import CustomUser, Carpark, Reservation, Payment, UserProfile, Vehicle, GPSCoordinate
 
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
@@ -42,3 +44,44 @@ class PaymentSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'reservation', 'transaction_id', 'amount', 'status', 'card_last4'
         ]
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = '__all__'
+
+class VehicleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vehicle
+        fields = '__all__'
+
+class GPSCoordinateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GPSCoordinate
+        fields = '__all__'
+# class FullUserProfileSerializer(serializers.ModelSerializer):
+#     profile = UserProfileSerializer(source='userprofile')
+#     vehicles = VehicleSerializer(many=True)
+#     gps_coordinates = GPSCoordinateSerializer(many=True)
+#     reservations = ReservationSerializer(many=True)
+#     payments = PaymentSerializer(many=True)
+
+#     class Meta:
+#         model = User
+#         fields = ['id', 'username', 'email', 'profile', 'vehicles', 'gps_coordinates', 'reservations', 'payments']
+# 1. First, fix the FullUserProfileSerializer:
+class FullUserProfileSerializer(serializers.ModelSerializer):
+    # Use required=False to handle cases where a user might not have a profile yet
+    profile = UserProfileSerializer(source='userprofile', required=False)
+    
+    # CustomUser has a related_name="reservations" for Reservation model
+    reservations = ReservationSerializer(many=True, read_only=True)
+    
+    # These fields need related_name attributes in their models
+    # vehicles is OneToOneField so shouldn't use many=True
+    vehicle = VehicleSerializer(source='vehicle', required=False, read_only=True)
+    gps_coordinate = GPSCoordinateSerializer(source='gpscoordinate', required=False, read_only=True)
+    
+    # Get payments through reservations
+    class Meta:
+        model = CustomUser  # Use CustomUser instead of User
+        fields = ['id', 'username', 'email', 'profile', 'vehicle', 'gps_coordinate', 'reservations']

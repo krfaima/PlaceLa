@@ -6,7 +6,7 @@ import '../models/carpark.dart';
 
 class CarparkService {
   // final String baseUrl = 'http://192.168.100.12:8000/accounts/';
-final String baseUrl = 'http://192.168.1.8:8000/api';
+final String baseUrl = 'http://127.0.0.1:8000/api';
 
   Future<List<Carpark>> getNearbyCarparks(
       double latitude, double longitude) async {
@@ -47,7 +47,7 @@ final String baseUrl = 'http://192.168.1.8:8000/api';
     required String color,
     required String plateNumber,
   }) async {
-    const String apiUrl = 'http://192.168.1.8:8000/accounts/reserve/';
+    const String apiUrl = 'http://127.0.0.1:8000/accounts/reserve/';
 
     final int parsedDuration = int.tryParse(duration) ?? 0;
 
@@ -84,7 +84,7 @@ final String baseUrl = 'http://192.168.1.8:8000/api';
     required String cardCvv,
     required String cardName,
   }) async {
-    const String apiUrl = 'http://192.168.1.8:8000/accounts/process-payment/';
+    const String apiUrl = 'http://127.0.0.1:8000/accounts/process-payment/';
 
     try {
       final response = await http.post(
